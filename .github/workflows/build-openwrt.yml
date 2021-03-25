@@ -208,16 +208,6 @@ jobs:
       with:
         name: OpenWrt-${{ env.NAME2 }}-${{ env.NAME1 }}-firmware-${{ env.date }}
         path: ${{ env.FIRMWARE }}
-
-    - name: 定时更新地址
-      uses: softprops/action-gh-release@v1
-      if: steps.organizer.outputs.status == 'success' && env.REGULAR_UPDATE == 'true'
-      env:
-        GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
-      with:
-        name: 定时升级云端地址
-        tag_name: update_Firmware
-        files: ${{ env.artifact }}/*
     
     - name: 整理发布信息
       if: steps.organizer.outputs.status == 'success' && env.UPLOAD_RELEASE == 'true'
