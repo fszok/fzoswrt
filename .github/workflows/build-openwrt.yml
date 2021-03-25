@@ -109,10 +109,6 @@ jobs:
         source "${PATH1}/common.sh" && Diy_all
         if [[ "${REPO_URL}" == "${LEDE}" ]]; then
           source "${PATH1}/common.sh" && Diy_lede
-        elif [[ "${REPO_URL}" == "${LIENOL}" ]]; then
-          source "${PATH1}/common.sh" && Diy_lienol
-        elif [[ "${REPO_URL}" == "${PROJECT}" ]]; then
-          source "${PATH1}/common.sh" && Diy_immortalwrt
         fi
         /bin/bash "${PATH1}/$DIY_P1_SH"
         ./scripts/feeds clean
@@ -120,19 +116,7 @@ jobs:
         if [[ "${REPO_URL}" == "${LEDE}" ]]; then
           source "${PATH1}/common.sh" && Diy_lede2
           echo "NAME2=Lede" >> $GITHUB_ENV
-          echo "ZUOZHE=Lean's" >> $GITHUB_ENV
-        elif [[ "${REPO_URL}" == "${LIENOL}" ]]; then
-          source "${PATH1}/common.sh" && Diy_lienol2
-          echo "NAME2=Lienol" >> $GITHUB_ENV
-          echo "ZUOZHE=lienol's" >> $GITHUB_ENV
-        elif [[ "${REPO_URL}" == "${PROJECT}" ]]; then
-          source "${PATH1}/common.sh" && Diy_immortalwrt2
-          echo "NAME2=Project" >> $GITHUB_ENV
-          echo "ZUOZHE=ctcgfw" >> $GITHUB_ENV
-        fi
-        source "${PATH1}/common.sh" && Diy_all2
-        if [ -n "$(ls -A "${PATH1}/files" 2>/dev/null)" ]; then
-          cp -Rf "${PATH1}/files" "${Home}" && chmod -R +x ${Home}/files
+          echo "ZUOZHE=Lean's" >> $GITHUB_ENV        
         fi
         if [ -n "$(ls -A "${PATH1}/diy" 2>/dev/null)" ]; then
           cp -Rf "${PATH1}"/diy/* "${Home}"
