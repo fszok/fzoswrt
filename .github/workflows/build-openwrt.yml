@@ -170,14 +170,7 @@ jobs:
          grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' > NAME1
          [ -s NAME1 ] && echo "NAME1=$(cat NAME1)" >> $GITHUB_ENV
         fi
-
-    - name: 上传bin文件夹
-      uses: actions/upload-artifact@v2
-      if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
-      with:
-        name: Bin_filename_ipk_${{ env.NAME2 }}_${{ env.NAME1 }}_${{ env.date }}
-        path: openwrt/bin
-    
+   
     - name: 整理固件
       id: organizer
       run: |
