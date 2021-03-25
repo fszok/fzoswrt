@@ -51,56 +51,6 @@ sed -i '/exit 0/i\echo "*/3 * * * * chmod +x /etc/webweb.sh && source /etc/webwe
 
 
 ################################################################################################################
-# LIENOL源码通用diy1.sh文件
-################################################################################################################
-Diy_lienol() {
-DIY_GET_COMMON_SH
-rm -rf package/diy/luci-app-adguardhome
-rm -rf package/lean/{luci-app-netdata,luci-theme-argon,k3screenctrl}
-git clone https://github.com/fw876/helloworld package/danshui/luci-app-ssr-plus
-git clone https://github.com/xiaorouji/openwrt-passwall package/danshui/luci-app-passwall
-git clone https://github.com/jerrykuku/luci-app-vssr package/danshui/luci-app-vssr
-git clone https://github.com/vernesong/OpenClash package/danshui/luci-app-openclash
-git clone https://github.com/frainzy1477/luci-app-clash package/danshui/luci-app-clash
-git clone https://github.com/garypang13/luci-app-bypass package/danshui/luci-app-bypass
-find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-redir/shadowsocksr-libev-alt/g' {}
-find package/*/ feeds/*/ -maxdepth 2 -path "*luci-app-bypass/Makefile" | xargs -i sed -i 's/shadowsocksr-libev-ssr-server/shadowsocksr-libev-server/g' {}
-}
-################################################################################################################
-# LIENOL源码通用diy2.sh文件
-Diy_lienol2() {
-DIY_GET_COMMON_SH
-cp -Rf "${Home}"/build/common/LIENOL/files "${Home}"
-cp -Rf "${Home}"/build/common/LIENOL/diy/* "${Home}"
-rm -rf feeds/packages/net/adguardhome
-sed -i '/exit 0/i\echo "*/3 * * * * chmod +x /etc/webweb.sh && source /etc/webweb.sh" >> /etc/crontabs/root' ${LIZZZ}
-sed -i 's/DEFAULT_PACKAGES +=/DEFAULT_PACKAGES += luci-app-passwall/g' target/linux/x86/Makefile
-}
-
-
-################################################################################################################
-# 天灵源码通用diy1.sh文件
-################################################################################################################
-Diy_immortalwrt() {
-DIY_GET_COMMON_SH
-rm -rf package/lienol/luci-app-timecontrol
-rm -rf package/ctcgfw/{luci-app-argon-config,luci-theme-argonv3}
-rm -rf package/lean/luci-theme-argon
-git clone https://github.com/garypang13/luci-app-bypass package/danshui/luci-app-bypass
-}
-
-################################################################################################################
-# 天灵源码通用diy2.sh文件
-Diy_immortalwrt2() {
-DIY_GET_COMMON_SH
-cp -Rf "${Home}"/build/common/PROJECT/files "${Home}"
-cp -Rf "${Home}"/build/common/PROJECT/diy/* "${Home}"
-sed -i '/exit 0/i\echo "*/3 * * * * chmod +x /etc/webweb.sh && source /etc/webweb.sh" >> /etc/crontabs/root' ${TYZZZ}
-sed -i "/exit 0/i\sed -i '/DISTRIB_REVISION/d' /etc/openwrt_release" ${TYZZZ}
-}
-
-
-################################################################################################################
 # 判断脚本是否缺少主要文件（如果缺少settings.ini设置文件在检测脚本设置就运行错误了）
 
 Diy_settings() {
