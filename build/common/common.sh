@@ -13,7 +13,7 @@ git clone -b $REPO_BRANCH --single-branch https://github.com/fszok/fz-package pa
 mv "${PATH1}"/AutoBuild_Tools.sh package/base-files/files/bin
 chmod +x package/base-files/files/bin/AutoBuild_Tools.sh
 if [[ ${REGULAR_UPDATE} == "true" ]]; then
-git clone https://github.com/281677160/luci-app-autoupdate package/luci-app-autoupdate
+git clone https://github.com/fszok/openwrt-autoupdate package/luci-app-autoupdate
 mv "${PATH1}"/AutoUpdate.sh package/base-files/files/bin
 chmod +x package/base-files/files/bin/AutoUpdate.sh
 fi
