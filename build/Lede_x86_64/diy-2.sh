@@ -32,7 +32,7 @@ sed -i 's/"USB 打印服务器"/"打印服务"/g' package/lean/luci-app-usb-prin
 sed -i 's/"网络存储"/"网络存储"/g' package/lean/luci-app-usb-printer/po/zh-cn/usb-printer.po
 sed -i 's/"Web 管理"/"Web管理"/g' package/lean/luci-app-webadmin/po/zh-cn/webadmin.po
 sed -i 's/"管理权"/"密码设置"/g' feeds/luci/modules/luci-base/po/zh-cn/base.po
-sed -i 's/"带宽监控"/"带宽监视"/g' feeds/luci/applications/luci-app-nlbwmon/po/zh-cn/nlbwmon.po
+sed -i 's/"带宽监控"/"带宽监控"/g' feeds/luci/applications/luci-app-nlbwmon/po/zh-cn/nlbwmon.po
 sed -i 's/ShadowSocksR Plus+/科学上网/g' package/diy/ssrplus/luci-app-ssr-plus/luasrc/controller/shadowsocksr.lua
 sed -i 's/PassWall/Pass Wall/g' package/diy/passwall/luci-app-passwall/po/zh-cn/passwall.po
 sed -i 's/广告屏蔽大师 Plus+/adbyby-plus/g' package/lean/luci-app-adbyby-plus/po/zh-cn/adbyby.po
