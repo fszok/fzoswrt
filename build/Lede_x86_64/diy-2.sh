@@ -24,7 +24,7 @@ sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz
 sed -i 's/"Web 管理"/"Web管理"/g' package/lean/luci-app-webadmin/po/zh-cn/webadmin.po
 sed -i 's/"管理权"/"密码设置"/g' feeds/luci/modules/luci-base/po/zh-cn/base.po
 sed -i 's/"带宽监控"/"带宽监控"/g' feeds/luci/applications/luci-app-nlbwmon/po/zh-cn/nlbwmon.po
-sed -i 's/ShadowSocksR Plus+/SSRplus+/g' package/danshui/ssrplus/luci-app-ssr-plus/luasrc/controller/shadowsocksr.lua
+sed -i 's/ShadowSocksR Plus+/SSRplus+/g' package/lean/ssrplus/luci-app-ssr-plus/luasrc/controller/shadowsocksr.lua
 sed -i 's/"Turbo ACC 网络加速"/"网络加速"/g' package/lean/luci-app-flowoffload/po/zh-cn/flowoffload.po
 sed -i 's/"Turbo ACC 网络加速"/"网络加速"/g' package/lean/luci-app-sfe/po/zh-cn/sfe.po
 sed -i 's/"实时流量监测"/"流量监测"/g' package/lean/luci-app-wrtbwmon/po/zh-cn/wrtbwmon.po
@@ -33,7 +33,7 @@ sed -i 's/"TTYD 终端"/"TTYD终端"/g' package/lean/luci-app-ttyd/po/zh-cn/term
 sed -i 's/"USB 打印服务器"/"打印服务"/g' package/lean/luci-app-usb-printer/po/zh-cn/usb-printer.po
 sed -i 's/"网络存储"/"网络存储"/g' package/lean/luci-app-usb-printer/po/zh-cn/usb-printer.po
 sed -i 's/挂载 SMB 网络共享/SMB共享/g' package/lean/luci-app-cifs-mount/po/zh-cn/cifs.po
-sed -i 's/"文件浏览器"/"文件管理"/g' package/danshui/luci-app-filebrowser/po/zh-cn/filebrowser.po
+sed -i 's/"文件浏览器"/"文件浏览器"/g' package/danshui/luci-app-filebrowser/po/zh-cn/filebrowser.po
 sed -i 's/PassWall/PassWall/g' package/danshui/passwall/luci-app-passwall/po/zh-cn/passwall.po
 sed -i 's/广告屏蔽大师 Plus+/广告屏蔽大师Plus+/g' package/lean/luci-app-adbyby-plus/po/zh-cn/adbyby.po
 sed -i 's/京东签到服务/京东签到/g' package/danshui/luci-app-jd-dailybonus/luasrc/controller/jd-dailybonus.lua
@@ -46,4 +46,4 @@ sed -i 's/解锁网易云灰色歌曲/解锁网易云音乐/g' package/lean/luci
 sed -i 's/Docker CE 容器/Docker容器/g' package/lean/luci-app-docker/po/zh-cn/docker.po
 sed -i 's/UU游戏加速器/UU加速器/g' package/lean/luci-app-uugamebooster/po/zh-cn/uuplugin.po
 sed -i 's/msgstr "FTP 服务器"/msgstr "FTP服务器"/g' package/lean/luci-app-vsftpd/po/zh-cn/vsftpd.po
-sed -i 's/Rclone/网盘挂载/g' package/lean/luci-app-rclone/luasrc/controller/rclone.lua
+sed -i 's/Rclone/Rclone/g' package/lean/luci-app-rclone/luasrc/controller/rclone.lua
