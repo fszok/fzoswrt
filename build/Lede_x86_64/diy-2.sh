@@ -47,3 +47,5 @@ sed -i 's/Docker CE 容器/Docker容器/g' package/lean/luci-app-docker/po/zh-cn
 sed -i 's/UU游戏加速器/UU加速器/g' package/lean/luci-app-uugamebooster/po/zh-cn/uuplugin.po
 sed -i 's/msgstr "FTP 服务器"/msgstr "FTP服务器"/g' package/lean/luci-app-vsftpd/po/zh-cn/vsftpd.po
 sed -i 's/Rclone/Rclone/g' package/lean/luci-app-rclone/luasrc/controller/rclone.lua
+sed -i 's/cbi("qbittorrent"),_("qBittorrent")/cbi("qbittorrent"),_("BT下载")/g' package/lean/luci-app-qbittorrent/luasrc/controller/qbittorrent.lua
+sed -i 's/"aMule设置"/"电驴下载"/g' package/lean/luci-app-amule/po/zh-cn/amule.po
