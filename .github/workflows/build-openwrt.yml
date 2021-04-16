@@ -155,9 +155,21 @@ jobs:
       id: compile
       run: |
         cd openwrt
-        echo -e "$(nproc) thread build."
+        echo -e "$(($(nproc)+1)) thread compile"
         make -j$(($(nproc)+1)) || make -j1 V=s
         echo "::set-output name=status::success"
+        echo "date=$(date "+%y.%m.%d-%H%M")" >> $GITHUB_ENV
+        echo "date2=$(date "+%Y%m%d%H%M%S")" >> $GITHUB_ENV
+        DEVICE="$(awk -F '[="]+' '/TARGET_BOARD/{print $2}' .config)"
+        SUBTARGET="$(awk -F '[="]+' '/TARGET_SUBTARGET/{print $2}' .config)"
+        if [ "${DEVICE}" == "x86" ]; then
+         echo "NAME1=x86-${SUBTARGET}" >> $GITHUB_ENV
+        elif [[ ${{matrix.target}} =~ (Lede_phicomm_n1|Project_phicomm_n1) ]]; then
+         echo "NAME1=N1,Vplus,Beikeyun,L1Pro,S9xxx" >> $GITHUB_ENV
+        else
+         grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' > NAME1
+         [ -s NAME1 ] && echo "NAME1=$(cat NAME1)" >> $GITHUB_ENV
+        fi
    
     - name: 整理固件
       id: organizer
