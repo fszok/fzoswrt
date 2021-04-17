@@ -10,13 +10,6 @@ LIZZZ="package/default-settings/files/zzz-default-settings"
 Diy_all() {
 DIY_GET_COMMON_SH
 git clone -b $REPO_BRANCH --single-branch https://github.com/fszok/fz-package package/danshui
-mv "${PATH1}"/AutoBuild_Tools.sh package/base-files/files/bin
-chmod +x package/base-files/files/bin/AutoBuild_Tools.sh
-if [[ ${REGULAR_UPDATE} == "true" ]]; then
-git clone https://github.com/fszok/openwrt-autoupdate package/luci-app-autoupdate
-mv "${PATH1}"/AutoUpdate.sh package/base-files/files/bin
-chmod +x package/base-files/files/bin/AutoUpdate.sh
-fi
 }
 
 
